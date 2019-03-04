@@ -1,0 +1,3890 @@
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  10000)   92.8224   0.00000   7465.26   0.05455       16s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         16864.8      16155.6      709.199
+Error per example:   84.3241      80.7781      3.54599
+Error per tick:      10.7694      10.3165      0.45287
+Unit cost per tick:  0.00000
+Output unit criterion reached on 62 examples (31.00%)
+violation has 720 test items
+Wed Jan 31 14:00:14 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  20000)   80.2771   0.00000   9535.70  -0.02694       15s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         16212.3      15948.2      264.058
+Error per example:   81.0615      79.7412      1.32029
+Error per tick:      10.3527      10.1841      0.16862
+Unit cost per tick:  0.00000
+Output unit criterion reached on 151 examples (75.50%)
+violation has 720 test items
+Wed Jan 31 14:02:07 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  30000)   70.1171   0.00000   10874.3  -0.02042       16s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         16349.3      16190.6      158.752
+Error per example:   81.7467      80.9530      0.79376
+Error per tick:      10.4402      10.3388      0.10137
+Unit cost per tick:  0.00000
+Output unit criterion reached on 167 examples (83.50%)
+violation has 720 test items
+Wed Jan 31 14:03:58 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  40000)   66.5680   0.00000   11828.0  -0.00827       16s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         15961.1      15797.4      163.732
+Error per example:   79.8057      78.9871      0.81866
+Error per tick:      10.1923      10.0877      0.10455
+Unit cost per tick:  0.00000
+Output unit criterion reached on 170 examples (85.00%)
+violation has 720 test items
+Wed Jan 31 14:05:49 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  50000)   68.1171   0.00000   12691.8  -0.01936       16s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         16161.4      16059.1      102.309
+Error per example:   80.8070      80.2955      0.51154
+Error per tick:      10.3202      10.2549      0.06533
+Unit cost per tick:  0.00000
+Output unit criterion reached on 181 examples (90.50%)
+violation has 720 test items
+Wed Jan 31 14:07:43 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  60000)   63.1925   0.00000   13419.8   0.43611       15s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         16168.4      16082.6      85.8320
+Error per example:   80.8420      80.4130      0.42916
+Error per tick:      10.3247      10.2699      0.05481
+Unit cost per tick:  0.00000
+Output unit criterion reached on 185 examples (92.50%)
+Wed Jan 31 14:07:59 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  70000)   66.3116   0.00000   14074.5  -0.13616       15s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         16131.4      16041.1      90.3120
+Error per example:   80.6568      80.2053      0.45156
+Error per tick:      10.3010      10.2433      0.05767
+Unit cost per tick:  0.00000
+Output unit criterion reached on 182 examples (91.00%)
+Wed Jan 31 14:08:15 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  80000)   77.8794   0.00000   14852.5   0.01003       15s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         16330.2      16195.3      134.857
+Error per example:   81.6509      80.9767      0.67429
+Error per tick:      10.4280      10.3419      0.08612
+Unit cost per tick:  0.00000
+Output unit criterion reached on 177 examples (88.50%)
+Wed Jan 31 14:08:32 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  90000)   70.8534   0.00000   15251.0  -0.00485       15s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         16233.2      16174.6      58.6130
+Error per example:   81.1661      80.8731      0.29307
+Error per tick:      10.3660      10.3286      0.03743
+Unit cost per tick:  0.00000
+Output unit criterion reached on 185 examples (92.50%)
+Wed Jan 31 14:08:48 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+ 100000)   60.4104   0.00000   15748.7   0.18598       16s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         16144.1      16089.3      54.7499
+Error per example:   80.7203      80.4465      0.27375
+Error per tick:      10.3091      10.2741      0.03496
+Unit cost per tick:  0.00000
+Output unit criterion reached on 186 examples (93.00%)
+Wed Jan 31 14:09:04 GMT 2018
+
+test lrate 0.1 
+violation has 720 test items
+vcoul1 has 60 test items
+vcoul2 has 60 test items
+vrommer has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 32 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vrommer has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+vromNotSeen has 30 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violations has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violations has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violations has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violations has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violations has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violations has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violations has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violations has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violations has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violations has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violation has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violation has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violation has 720 test items
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+violation has 720 test items

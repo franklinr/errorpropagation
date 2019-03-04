@@ -1,0 +1,435 @@
+# what-where model lens 2.3.1
+
+addNet RecDPM -i 30
+
+if {[file exists model.tcl]} {
+  source model.tcl
+  puts "ran model.tcl "
+}
+
+## these are the input layers
+#set semSize 55
+#set lexSize 68
+#set eventsemSize 23
+set whereSize 6
+
+## hidden layers
+set hiddenSize 50
+set compressSize 30
+set ccompressSize 30
+set bias 0
+set blrate -1
+
+## Learning rate linear decline 
+set startlrate 0.1
+set finallrate 0.1
+set starttime 500000 
+set timedecay 50000
+
+seed 11
+
+
+if {[file exists beforecode.tcl]} {
+  source beforecode.tcl
+  puts "ran beforecode "
+}
+
+if {$blrate > 0} {
+   set startlrate $blrate
+   set finallrate $blrate
+}
+puts start$startlrate
+puts final$finallrate
+
+set contextSize $hiddenSize
+
+## create layers
+addGroup cword2 $lexSize ELMAN ELMAN_CLAMP ELMAN_CLAMP -BIASED  
+addGroup cword $lexSize -BIASED OUT_WINNER
+addGroup cwhat $semSize OUTPUT TARGET_COPY -BIASED -WRITE_OUTPUTS
+addGroup cwhere2 $whereSize ELMAN ELMAN_CLAMP ELMAN_CLAMP -BIASED  
+addGroup cwhere $whereSize SOFT_MAX -BIASED 
+addGroup eventsem $eventsemSize LINEAR -BIASED
+addGroup context $contextSize ELMAN OUT_INTEGR -BIASED 
+addGroup hidden $hiddenSize -BIASED
+addGroup where $whereSize -BIASED
+addGroup what $semSize -BIASED
+addGroup compress $compressSize -BIASED 
+addGroup targ $lexSize INPUT 
+addGroup word $lexSize OUTPUT SOFT_MAX DIVERGENCE STANDARD_CRIT USE_OUTPUT_HIST USE_TARGET_HIST -BIASED
+# logistic/cross-entropy doesn't seem to work for the N400
+
+set saveLayers [list word compress hidden cword ]
+
+## parameters for connections
+## hysteresis 1=copy  0=no change
+setObj context.dtScale 1
+
+
+connectGroups cwhat cwhere -type ww
+connectGroups where what -type ww
+connectGroups what word -type whatword
+connectGroups hidden where -type hidwhere
+connectGroups context hidden -type conthid
+connectGroups cwhere hidden -type prehid
+connectGroups cwhere2 hidden -type prehid
+connectGroups eventsem hidden -type esemhid
+connectGroups cword hidden -type cwordhid
+connectGroups cword2 hidden -type cwordhid
+connectGroups hidden compress word -type hidword
+
+## connect layers
+for {set i 0} {$i < $semSize } {incr i} {         
+    for {set j 1} {$j < $lexSize } {incr j} {     
+        connectUnits cword:$j cwhat:$i -type cwordcwhat
+    }
+}
+
+## connect bias
+connectGroups bias eventsem -type bt
+connectGroups bias what -type low
+connectGroups bias cwhat -type low
+
+## copy output of what units as training signal for cwhat units
+copyConnect what cwhat outputs
+
+connectGroups targ cword -type cwordtype -proj ONE_TO_ONE
+connectGroups word cword -type cwordtype -proj ONE_TO_ONE
+elmanConnect cwhere cwhere2 -r 1 -init 0.0
+elmanConnect cwhere2 cwhere2 -r 1 -init 0.0
+elmanConnect hidden context -r 1 -init 0.5
+elmanConnect cword cword2 -r 1 -init 0.0
+elmanConnect cword2 cword2 -r 1 -init 0.0
+
+## turn off learning for what-where cwhat-cwhere message weights
+setLinkValue learningRate 0 -t ww
+setLinkValues randMean  0 -t ww
+setLinkValues randRange 0 -t ww
+
+## turn off learning for event-semantic weights
+setLinkValue learningRate 0 -t bt
+setLinkValues randMean  0 -t bt
+setLinkValues randRange 0 -t bt
+
+## set bias of what units so that normal activation is low
+setLinkValue learningRate 0 -t low
+setLinkValues randMean  -3 -t low
+setLinkValues randRange 0 -t low
+
+## seed and randomize network
+randWeights -t low
+freezeWeight -t low
+
+loadExamples train.ex
+loadExamples test.ex
+loadExamples vcoul1.ex
+loadExamples vcoul2.ex
+loadExamples vromNotSeen.ex
+loadExamples vrommer.ex
+loadExamples violations.ex
+
+setObj numUpdates 10000
+
+setObj learningRate $startlrate
+set slope [expr ( $startlrate - $finallrate ) / $timedecay ]
+puts slope$slope
+
+proc reduceLrate { } {
+    global startlrate
+    global starttime 
+    global timedecay
+    global finallrate
+    global slope
+    set updates [getObj totalUpdates]
+    if {$updates > [expr $timedecay + $starttime ]} { 
+    setObj learningRate $finallrate
+    return;
+    }
+    if {$updates < $starttime} { return; }
+    if {$updates % 10000} return
+    set lrate [expr $startlrate - $slope * ( $updates - $starttime ) ]
+    setObj learningRate $lrate
+    puts [getObj learningRate]
+    puts $slope
+    puts $updates
+}
+setObj preEpochProc reduceLrate
+
+set strength 6
+set reducer 0.5
+set treduce 0.5
+
+## sets the initial activation of the eventsemantics
+set inittlink 0.0
+set initflink 1.0
+set inittargtlink 0.5
+
+set numEpochs 10000
+set mode ORDERED
+exampleSetMode train ORDERED
+
+#setObj targetRadius 0.1
+steepest -setOnly
+
+proc clear {} {
+    randWeights -t ww
+    randWeights -t bt
+}
+clear
+
+proc link {input args} {
+    global strength
+    set strength 6
+
+    foreach j $args {
+        if {$j < 0} {            
+            set strength [expr -1 * $j]
+        } else {
+          setObj what.unit($j).incoming($input).weight $strength;
+      setObj cwhere.unit($input).incoming($j).weight $strength;
+    }
+    }
+}
+
+proc flink {args} {
+    global initflink
+    set tstrength 1.0
+    
+    foreach j $args {
+        if {$j < 0} {            
+            set tstrength [expr $initflink * $j * -1 / 10]
+        } else {
+            setObj eventsem.unit($j).incoming(0).weight $tstrength;
+        }
+    }
+}
+
+proc saveTest {time {label ""} {numpats 0}} {
+     global record
+     set record 0
+     set filename $time$label
+     if {[file isdirectory results] == 0} { file mkdir results}
+     if {[file isfile results/res$filename.out.gz] == 1} { set filename $filename.1 }
+
+     openNetOutputFile results/res$filename.out
+     test $numpats
+     closeNetOutputFile
+#     exec gzip -f results/res$filename.out
+     exec perl decode9.perl results/res$filename.out | perl syncode2.perl > sum$filename &
+
+# for some reason my gzip keeps hanging up, so everything in the model goes unzipped
+     }
+
+proc useSaveTest {time set {numpats 0}} {
+    useTestingSet $set
+    exampleSetMode $set ORDERED
+    saveTest $time $set $numpats
+    }
+
+proc nullProc { } {
+}
+
+proc testERP {time set} {
+   global fileout
+   set wtfile comp$time.wt
+   setObj postTickProc printDerivs
+
+   setObj batchSize 1
+    useTestingSet $set	
+   exampleSetMode $set ORDERED
+   set numExp [getObj $set.numExamples] 
+   puts "violation has $numExp test items"   
+   set filename derivatives$time
+   set fileout [open $filename w]
+
+    for {set s 0} {$s < $numExp} {incr s} {
+#       puts $s
+#       resetNet
+       loadWeights $wtfile
+       doExample -train -s violations
+#       updateWeights 
+   }
+   close $fileout
+   setObj postTickProc nullProc
+}
+
+proc testERPlearn {time set {lrate 0.1} } {
+   global fileout
+   set wtfile comp$time.wt
+   setObj postTickProc printDerivs
+
+   setObj batchSize 1
+#    useTestingSet $set
+   exampleSetMode $set ORDERED
+   set numExp [getObj $set.numExamples] 
+   puts "$set has $numExp test items"   
+   set filename deriv$lrate$set-$time
+   set fileout [open $filename w]
+   resetNet
+   loadWeights $wtfile
+   resetDerivs
+   setObj learningRate $lrate
+    for {set s 0} {$s < $numExp} {incr s} {
+       doExample -train -s $set
+       updateWeights 
+   }
+   close $fileout
+   setObj postTickProc nullProc
+}
+
+
+proc testERPprimetar {{time 100000} {set vrommer} {lrate 0.1} } {
+   global fileout
+   set wtfile comp$time.wt
+   setObj postTickProc printDerivs
+
+   setObj batchSize 1
+   exampleSetMode $set ORDERED
+   set numExp [expr [getObj $set.numExamples] / 2] 
+   puts "$set has $numExp test items"   
+   set filename deriv$lrate$set-$time
+   set fileout [open $filename w]
+   setObj learningRate $lrate
+    for {set s 0} {$s < $numExp} {incr s} {
+      resetNet
+      loadWeights $wtfile
+       doExample -train -s $set
+       updateWeights 
+       doExample -train -s $set
+#       updateWeights 
+   }
+   close $fileout
+   setObj postTickProc nullProc
+}
+
+
+proc trainSave {{max 10}} {
+  resetNet
+  global numEpochs
+  setObj reportInterval 10000
+  set numEpochs 10000
+  set max [expr $max * 10000]  
+
+  set epo [getObj totalUpdates]
+  while {$epo < $max} {
+  
+      useTrainingSet train
+      exampleSetMode train PERMUTED
+      setObj batchSize 1
+      train $numEpochs
+
+      set epo [getObj totalUpdates]
+      saveWeights comp$epo.wt
+
+      useSaveTest $epo test 
+      if {$epo <= 50000} {
+        testERP $epo violations
+      }
+
+      set wtfile comp$epo.wt
+      loadWeights $wtfile
+      puts [exec date]
+  }
+  set epo [getObj totalUpdates]
+  set lr [getObj learningRate] 
+  puts "\ntest lrate $lr "
+  testERP $epo violations
+  testERPlearn $epo vcoul1 $lr
+  testERPlearn $epo vcoul2 $lr
+  testERPprimetar $epo 
+  testERPprimetar $epo vromNotSeen
+}
+
+foreach g $saveLayers {
+   puts $g
+   puts [groupType $g]
+}
+
+set maxnunits 0
+
+proc printDerivs { } {
+  global saveLayers
+  global fileout
+  global maxnunits
+  set currTick [getObj currentTick]
+
+  set examplename [getObj currentExample.name]
+  puts -nonewline $fileout "\n$examplename,$currTick,word,target"
+  for {set i 0} {$i < [getObj word.numUnits] } {incr i} {    
+           set tar [format %.7f [getObj word.unit($i).target]]
+      	   puts -nonewline $fileout ",$tar"
+  }
+
+  foreach g $saveLayers { 
+      set nunits [getObj $g.numUnits]
+      set examplename [getObj currentExample.name]
+      puts -nonewline $fileout "\n$examplename,$currTick,$g,outderiv"
+      for {set i 0} {$i < $nunits } {incr i} {    
+           set deriv [format %.7f [getObj $g.unit($i).outputDeriv]]
+      	   puts -nonewline $fileout ",$deriv"
+      }
+      puts -nonewline $fileout "\n$examplename,$currTick,$g,inputderiv"
+      for {set i 0} {$i < $nunits } {incr i} {    
+           set deriv [format %.7f [getObj $g.unit($i).inputDeriv]]
+      	   puts -nonewline $fileout ",$deriv"
+      }
+      puts -nonewline $fileout "\n$examplename,$currTick,$g,output"
+      for {set i 0} {$i < $nunits } {incr i} {    
+           set out [format %.7f [getObj $g.unit($i).output]]
+      	   puts -nonewline $fileout ",$out"
+      }
+      if {$nunits > $maxnunits} {
+      	 set maxnunits $nunits
+	 set maxfile [open maxnunit w]
+	 puts $maxfile "$nunits"
+	 close $maxfile	 
+      }
+  }   
+}  
+
+proc printWeights { } {
+  global fileout
+  global lexSize
+  global compressSize
+  global hiddenSize
+  global ccompressSize
+  
+  set filename weights
+  set fileout [open $filename a]
+  set currTick [getObj currentTick]
+  if {$currTick == 0} {
+    puts -nonewline $fileout "\nitem:[getObj currentExample.name]"
+    }
+
+  puts -nonewline $fileout "\n$currTick hidden-compress weights"
+  for {set i 0} {$i < $compressSize } {incr i} {
+      set compressWeights [format %.3f [getObj compress.unit($i).incoming($i).weight]]
+      puts -nonewline $fileout " $compressWeights"
+      }
+  puts -nonewline $fileout "\n$currTick ccompress-hidden weights"
+  for {set i 0} {$i < $ccompressSize } {incr i} {
+      set hiddenWeights [format %.3f [getObj hidden.unit($i).incoming($i).weight]]
+      puts -nonewline $fileout " $hiddenWeights"
+      }
+#  puts -nonewline $fileout "\n$currTick cword-ccompress weights"
+#  for {set i 0} {$i < $ccompressSize } {incr i} {
+#      set ccompressWeights [format %.3f [getObj ccompress.unit($i).incoming($i).weight]]
+#      puts -nonewline $fileout " $ccompressWeights"
+#      }
+  
+  close $fileout
+}
+#setObj postTickProc printWeights
+
+proc setlabels {layer args} {
+  set c 0
+  foreach n $args {
+    setObj $layer.unit($c).name $n
+    incr c 1
+  }
+}
+
+#if {[file exists aftercode.tcl]} {
+#  source aftercode.tcl
+#  puts "ran aftercode "
+#}

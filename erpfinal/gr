@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+
+$args = "@ARGV";
+#printf "\nmaking csv file $args";
+
+system("mkdir results");
+system("rm -f results/*.csv results/*.html results/*.rds");
+
+$der = "perl makederiv.perl ";
+$check = "perl checkfreq.perl ";
+$graph = "perl makegraphs.perl ";
+
+for $f (@ARGV){
+    $check = $check." $f/train*";
+    $der = $der." $f/der*";
+    $graph = $graph." $f/sum*";
+}
+#print($check);
+$num = 32;
+
+$f = $ARGV[1];
+$f =~ s/^sim.+?[-]s[0-9][-]/stat/;
+@df = glob($ARGV[1]);
+print(@df[0]);
+
+$onecommand = "$graph;$check;$der;";
+print($onecommand);
+system($onecommand);
+
+system("env R_MAX_VSIZE=700Gb Rscript -e \"library(knitr);require(markdown); knit('statafter$num.Rmd');markdownToHTML('statafter$num.md', 'statafter$num.html') \" ");
+sleep 1 while ( !(-e "statafter$num.html") );
+print("found statafter$num.html");
+system("cp statafter$num.html $f.html");
+
+system("cp *.csv *.rds *.html @df[0]");
+
+system("egrep '(Folder|<h2>|@@)' statafter$num.html | perl -nle 's/<[^>]+?>//g;s/@@//g;s/Folder/\n/;print'>> laysummary");
+system("tail -60 laysummary");
+

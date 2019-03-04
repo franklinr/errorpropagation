@@ -1,0 +1,209 @@
+categories{  # these are the semantic categories that are used for selecting words for messages
+DET         DET the the the the a a prn
+NUMBER      NUM sg sg sg pl
+LIVING      NOUNA man woman boy girl father mother brother sister uncle aunt friend teacher grandma grandpa husband wife clerk driver
+NONLIVING   NOUNI apple cake bread salad steak wine tea coffee water beer ball stick toy kite pencil
+LIVING#NONLIVING
+NONDRINK    NOUNI apple cake bread salad steak ball stick toy kite pencil
+INTRANSVERB1 VERBI run jump nap walk
+INTRANSVERB2 VERBI drop fall break bounce
+TRANSVERB   VERBT push take drink eat sip sniff taste
+TRANSVERB1  VERBT believe know
+DATVERB     VERBD give throw send lend
+PRO         PRO he she it him her they them
+AUX         AUX is was are were will
+BY          BY by
+TO          TO to
+PREP        PREP near by
+WITH        WITH with
+BEING       BEING being be
+ING         ING -ing
+PL          PL -s
+SS          SS -ss
+ED          ED -ed
+PAR         PAR -par
+THAT        THAT that
+EXTRA       EXTRA one two three
+PER         PER .
+#event semantics
+TENSE       PRES PRES PRES PAST PAST PAST FUTR
+ASPECT      SIMP SIMP PROG
+AA      AA
+CC      CC
+XX      XX
+YY      YY
+ZZ      ZZ
+#roles: 0A 0X 0Y 0Z 1A 1Y
+}
+
+# these are verb argument constraints
+constraints{
+take 0y apple cake bread salad steak wine tea coffee water beer ball stick toy kite pencil nap=9 walk=9 run=9 jump=9
+sip 0y coffee water wine beer tea=60
+sniff 0y coffee water beer tea wine=40
+taste 0y coffee water beer tea wine=40
+drink 0y coffee wine beer tea water=60
+}
+
+constructions{  ## these are the message-sentence pairs.
+# default frequency is FREQ=10
+
+concept1: LIVING,DET,NUMBER
+form1:      1,0,2
+
+concept2: LIVING#NONLIVING,DET,NUMBER
+form2:    1,0,2
+
+concept3: NONLIVING,DET,NUMBER
+form3:    1,0,2
+
+concept4: LIVING#NONLIVING,DET,NUMBER,PREP
+form4:    3,1,0,2
+
+
+# intransitive-----------------------------------------------------------------
+mess1: 0A=INTRANSVERB1 0Y=CONCEPT1 0E=TENSE,ASPECT,AA,YY FREQ=5 LABEL=I
+sent1: 0Y 0A0,0E0,0E1
+
+mess2: 0A=INTRANSVERB1 0Y=CONCEPT1 1Y=CONCEPT4 0E=TENSE,ASPECT,AA,YY FREQ=5 LABEL=IW
+sent2: 0Y 0A0,0E0,0E1 1Y .
+
+mess3: 0A=INTRANSVERB2 0Y=CONCEPT3 0E=TENSE,ASPECT,AA,YY FREQ=40 LABEL=I
+sent3: 0Y 0A0,0E0,0E1
+
+# transitive-------------------------------------------------------------------
+mess4: 0A=TRANSVERB 0X=CONCEPT1 0Y=CONCEPT3 0E=TENSE,ASPECT,AA,XX,YY FREQ=60 LABEL=TR
+sent4: 0X 0A0,0E0,0E1 0Y .
+
+mess6: 0A=TRANSVERB1 0X=CONCEPT1 0Y=CONCEPT1 0E=TENSE,ASPECT,AA,XX,YY FREQ=5 LABEL=TRB
+sent6: 0X 0A0,0E0,0E1 0Y .
+
+mess7: 0A=TRANSVERB1 0X=CONCEPT1 0E=TENSE,ASPECT,AA,XX,YY 1A=INTRANSVERB1 1Y=CONCEPT1 1E=TENSE,ASPECT  FREQ=5 LABEL=SC
+sent7: 0X 0A0,0E0,0E1 that 1Y 1A0,1E0,1E1 .
+
+# dative---------------------------------------------------------
+# prepositional
+mess5: 0A=DATVERB 0X=CONCEPT1 0Y=CONCEPT3 0Z=CONCEPT1 0E=TENSE,ASPECT,AA,XX,ZZ,YY FREQ=10 LABEL=DAT
+sent5: 0X 0A0,0E0,0E1 0Y to 0Z .
+
+}
+
+sent-rewrite-en{
+
+$cnt++;
+s/=gen,/=/g; # generic nouns cake is good, cakes are delicious
+
+s/,,/,/g;
+s/(\da=\S+),(aa|xx|yy|zz)/$1/g;
+s/,(aa|xx|yy|zz)//g;
+
+# invert X and Y for passive
+s/ (\d)([yz]=\S+) (\d[a]=\S+) (.*?)(\1)(x=)/ $1$2 $3 -par $4by $5$6/g;
+s/ passive=(\S+) (\d[a]=\S+) / $1 $2 -par by /g;
+s/ (\d[a]=\S+) passive=(\S+) / $1 -par by $2 /g;
+s/ passive=\S+ / /g;
+
+#in case there are no adjectives
+s/,,/,/g;
+
+### agreement goes before embedding
+s/([^, =]+),futr,prog/$1,futr,simp/g;
+s/([^, =]+),pres,prog/is $1 -ing/g;
+s/([^, =]+),past,prog/was $1 -ing/g;
+s/(\S+) -ing -par/being $1 -par/g;
+s/([^, =]+),futr,simp/will $1/g;
+
+s/pres,simp/-ss/g;
+s/past,simp/-ed/g;
+s/(\S+),-ss -par/is $1 -par/g;
+s/(\S+),-ed -par/was $1 -par/g;
+s/will (\S+) -par/will be $1 -par/;
+
+s/,pl(=)* +([01]a=)([^, ]+,)*is/,pl$1 $2$3are/g;
+s/,pl(=)* +([01]a=)([^, ]+,)*was/,pl$1 $2$3were/g;
+s/,pl(=)* +([01]a=)([^, ]+,)*does/,pl$1 $2$3do/g;
+s/(,pl(=)* (0|1)a=\S+),-ss/$1/g;
+
+s/\d[xyz]=/ /g;
+
+#### deal with embeddings
+# move head to front
+s/(.+)\[(.*?) (\S+)= /$1 =$3 that $2 /;
+s/ (\S.+?) (.+?)=\1 that(.+?)\d*\]/ $1 that $3 $2 /;
+s/,prn,(\S*) that/,$1 that/;
+#s/(\d+\]) *(\[) +/ and nom,/;
+s/\[//g;
+s/\d+\]//g;
+s/\]//g;
+
+s/,sg//g;
+s/a,(\S+?),pl/$1,pl/g;
+s/,pl/ -s/g;
+
+s/,\d[xyz]\d,/,/g;
+s/ +/ /g;
+
+s/\d[a]=/ /g;
+
+s/-s that is/-s that are/g;
+s/-s that was/-s that were/g;
+
+s/-s was/-s were/;
+s/-s is/-s are/;
+#s/-par/-ed/g;
+
+## cleanup
+s/([a-z])\./$1 ./g;
+s/\.(.+?\.)/$1/g;
+s/,/ /g;
+s/\s+/ /g;
+
+s/the (\S+) -s that/that the $1 -s/;
+s/the (\S+) that/that the $1/;
+
+s/prn \S+ -s/they/g;
+s/prn (man|boy|father|brother|uncle|grandpa|husband|clerk|driver)/he/g;
+s/prn (woman|girl|mother|sister|aunt|grandma|wife|friend|teacher)/she/g;
+s/prn \S+/it/g;
+s/they to/them to/;
+s/ he \./ him \./;
+s/ she \./ her \./;
+s/ they \./ them \./;
+
+s/(give|throw|send|lend) she /$1 her /;
+s/(give|throw|send|lend) he /$1 him /;
+s/(give|throw|send|lend) they /$1 them /;
+
+s/(give|throw|send|lend) (-ing|-ed|-ss) she /$1 $2 her /;
+s/(give|throw|send|lend) (-ing|-ed|-ss) he /$1 $2 him /;
+s/(give|throw|send|lend) (-ing|-ed|-ss) they /$1 $2 them /;
+
+# optional that for ambiguity
+s/ that / / if $cnt % 4 == 0;
+
+s/ +/ /g;
+}
+
+# this is run on message before passing to generatesent
+beforesent{
+$cnt++;
+# PD bias
+s/A=(SEND|THROW)(.+?)(0E=\S+?),ZZ,YY/A=$1$2$3,ZZ,_,YY/ if $cnt % 3 != 0;
+# DO bias
+s/A=(GIVE|LEND)(.+?)(0E=\S+?),ZZ,YY/A=$1$2$3,-3,YY,-10,ZZ/ if $cnt % 3 != 1; 
+
+}
+
+# this replaces rmstuff (keep it simple)
+cleanup{
+s/,_,/,/g;
+
+s/ ([A-Z]+)( \1)+/ $1/g if /semantic/;
+s/ ([a-z]+)( \1)+/ $1/g if /lexicon/;
+
+s/FUTR,PROG/FUTR,SIMP/g;
+
+s/,SG//g;
+s/,,/,/g;
+}
+
