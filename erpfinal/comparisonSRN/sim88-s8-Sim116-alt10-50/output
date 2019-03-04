@@ -1,0 +1,178 @@
+                            LENS Version OSX-1.0a
+                 Copyright (C) 1998-2004  Douglas Rohde,
+      Carnegie Mellon University, Center for the Neural Basis of Cognition
+
+                MacOSX port by Harm Brouwer' (me@hbrouwer.eu),
+    Daniel de Kok' (me@danieldk.eu) and Hartmut Fitz* (hartmut.fitz@gmail.com)
+             ' University of Groningen, Center for Language and Cognition
+             * Max Planck Institute for Psycholinguistics, Nijmegen
+
+ran model.tcl 
+ran beforecode 
+start0.1
+final0.1
+slope0.0
+word
+Base Type
+  OUTPUT
+Input Type
+  DOT_PRODUCT
+Output Type
+  SOFT_MAX
+Cost Type
+  DIVERGENCE
+Group Criterion Type
+  STANDARD_CRIT
+History Types
+  USE_OUTPUT_HIST
+  USE_TARGET_HIST
+Other Types
+  RESET_ON_EXAMPLE
+  WRITE_OUTPUTS
+
+compress
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+hidden
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+Other Types
+  RESET_ON_EXAMPLE
+
+cword
+Input Type
+  DOT_PRODUCT
+Output Type
+  LOGISTIC
+  OUT_WINNER
+Other Types
+  RESET_ON_EXAMPLE
+
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  10000)   106.027   0.00000   4949.59   0.10971       10s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         19867.7      17295.8      2571.85
+Error per example:   99.3385      86.4791      12.8592
+Error per tick:      12.6869      11.0446      1.64230
+Unit cost per tick:  0.00000
+Output unit criterion reached on 0 examples (0.00%)
+violation has 720 test items
+Tue Feb 13 00:57:56 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  20000)   108.072   0.00000   6058.08  -0.17922       10s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         19788.1      17295.8      2492.29
+Error per example:   98.9405      86.4791      12.4615
+Error per tick:      12.6361      11.0446      1.59150
+Unit cost per tick:  0.00000
+Output unit criterion reached on 0 examples (0.00%)
+violation has 720 test items
+Tue Feb 13 00:59:38 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  30000)   77.0603   0.00000   6735.03  -0.02103       10s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         19714.6      17295.8      2418.78
+Error per example:   98.5728      86.4791      12.0939
+Error per tick:      12.5891      11.0446      1.54456
+Unit cost per tick:  0.00000
+Output unit criterion reached on 0 examples (0.00%)
+violation has 720 test items
+Tue Feb 13 01:01:20 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  40000)   64.7979   0.00000   7176.13  -0.06339       10s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         19728.1      17295.8      2432.30
+Error per example:   98.6405      86.4791      12.1615
+Error per tick:      12.5978      11.0446      1.55319
+Unit cost per tick:  0.00000
+Output unit criterion reached on 0 examples (0.00%)
+violation has 720 test items
+Tue Feb 13 01:03:01 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  50000)   65.8474   0.00000   7674.63   0.05157       10s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         19718.4      17295.8      2422.59
+Error per example:   98.5919      86.4791      12.1129
+Error per tick:      12.5916      11.0446      1.54699
+Unit cost per tick:  0.00000
+Output unit criterion reached on 0 examples (0.00%)
+violation has 720 test items
+Tue Feb 13 01:04:43 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  60000)   61.3474   0.00000   8107.81   0.39436       10s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         19694.0      17295.8      2398.15
+Error per example:   98.4699      86.4791      11.9908
+Error per tick:      12.5760      11.0446      1.53139
+Unit cost per tick:  0.00000
+Output unit criterion reached on 0 examples (0.00%)
+Tue Feb 13 01:04:54 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  70000)   64.3030   0.00000   8478.93  -0.12794       10s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         19700.8      17295.8      2405.00
+Error per example:   98.5040      86.4791      12.0250
+Error per tick:      12.5803      11.0446      1.53576
+Unit cost per tick:  0.00000
+Output unit criterion reached on 0 examples (0.00%)
+Tue Feb 13 01:05:05 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  80000)   89.8193   0.00000   9019.28   0.02658       10s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         19681.5      17295.8      2385.71
+Error per example:   98.4077      86.4791      11.9286
+Error per tick:      12.5680      11.0446      1.52344
+Unit cost per tick:  0.00000
+Output unit criterion reached on 0 examples (0.00%)
+Tue Feb 13 01:05:16 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+  90000)   69.2163   0.00000   9149.87  -0.09466       10s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         19676.7      17295.8      2380.89
+Error per example:   98.3834      86.4791      11.9045
+Error per tick:      12.5649      11.0446      1.52036
+Unit cost per tick:  0.00000
+Output unit criterion reached on 0 examples (0.00%)
+Tue Feb 13 01:05:27 GMT 2018
+Performing 10000 updates using Steepest Descent...
+__Update____Error___UnitCost__Wgt.Cost__Grad.Lin__TimeUsed__TimeLeft__
+ 100000)   59.6098   0.00000   9431.43   0.02198       10s        0s
+Test results on 200 examples, 1566 ticks:
+                     Network      cwhat        word        
+Error total:         19678.9      17295.8      2383.02
+Error per example:   98.3943      86.4791      11.9151
+Error per tick:      12.5663      11.0446      1.52173
+Unit cost per tick:  0.00000
+Output unit criterion reached on 0 examples (0.00%)
+Tue Feb 13 01:05:38 GMT 2018
+
+test lrate 0.1 
+violation has 720 test items
+vcoul1 has 60 test items
+vcoul2 has 60 test items
+vrommer has 30 test items
