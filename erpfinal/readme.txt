@@ -1,5 +1,5 @@
 
-To run 10 model:
+To run 10 models:
 runauto2.perl &
 It will run the commands in the cmdfile.  Just remove the # when it is done to run again.
 
