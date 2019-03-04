@@ -7,5 +7,5 @@
   - The ERP model simulations
   
   #### comparisonSRN/ 
-  - The SRN simulations for the paper
+  - The SRN simulations
   
