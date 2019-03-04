@@ -1,7 +1,7 @@
 # Errorpropagation
 
   - The model for running the model     
-  ⋅⋅* modelcode/
+  * modelcode/
   
   - The ERP model simulations
   ⋅⋅* erpfinal/  
