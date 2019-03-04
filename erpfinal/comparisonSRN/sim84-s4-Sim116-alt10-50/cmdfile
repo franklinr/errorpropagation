@@ -1,6 +1,0 @@
-# SET will rule the same model 10 times updating -s each time and then it will comment out.
-SET -s 5 -n 50000 envgramSim116 === -alt 10,50  ===
-
-
-
-
