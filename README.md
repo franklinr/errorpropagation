@@ -1,10 +1,11 @@
 # Errorpropagation
 
-  ### The model for running the model     
-  - modelcode/
+  #### modelcode/
+  - The model for running the model     
   
-  ### The ERP model simulations
-  - erpfinal/  
+  #### erpfinal/  
+  - The ERP model simulations
   
-  ### The SRN simulations for the paper
-  - comparisonSRN/ 
+  #### comparisonSRN/ 
+  - The SRN simulations for the paper
+  
