@@ -16,7 +16,7 @@ for $f (@ARGV){
     $graph = $graph." $f/sum*";
 }
 #print($check);
-$num = 32;
+$num = 33;
 
 $f = $ARGV[1];
 $f =~ s/^sim.+?[-]s[0-9][-]/stat/;
